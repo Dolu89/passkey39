@@ -1,0 +1,24 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    // Override pour le build
+    "noEmit": false,
+    "emitDeclarationOnly": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
+    
+    // Configuration pour les modules
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    
+    // Générer les définitions
+    "declaration": true,
+    "declarationMap": false,
+    
+    // Pas d'import d'extensions TS dans les .d.ts
+    "allowImportingTsExtensions": false,
+    "verbatimModuleSyntax": false
+  },
+  "include": ["src/**/*"],
+  "exclude": ["src/**/*.test.ts", "src/**/*.spec.ts", "node_modules", "dist", "test"]
+} 

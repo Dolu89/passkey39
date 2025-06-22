@@ -1,0 +1,38 @@
+{
+  "name": "passkey39",
+  "version": "1.0.0",
+  "author": "Dolu <doludev@pm.me>",
+  "description": "A modern WebAuthn/Passkeys library for browser authentication that generates deterministic private keys from authenticator signatures.",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "bun run clean && bun build src/index.ts --outdir dist --format esm --target browser --minify && tsc --project tsconfig.build.json",
+    "test": "bun test",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "bun run build && bun run test"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/dom-webcodecs": "^0.1.11",
+    "happy-dom": "^15.7.4",
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@noble/hashes": "^1.8.0",
+    "@scure/bip39": "^1.6.0"
+  },
+  "browser": true,
+  "private": true
+}
