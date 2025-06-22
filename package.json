@@ -21,7 +21,10 @@
     "build": "bun run clean && bun build src/index.ts --outdir dist --format esm --target browser --minify && tsc --project tsconfig.build.json",
     "test": "bun test",
     "clean": "rm -rf dist",
-    "prepublishOnly": "bun run build && bun run test"
+    "prepublishOnly": "bun run build && bun run test",
+    "demo:dev": "cd demo && bun run dev",
+    "demo:build": "cd demo && bun run build",
+    "demo:preview": "cd demo && bun run preview"
   },
   "devDependencies": {
     "@types/bun": "latest",

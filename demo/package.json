@@ -4,12 +4,14 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "bun run build:lib && vite",
+    "build": "bun run build:lib && vite build",
+    "build:lib": "cd .. && bun run build",
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.2.37"
+    "vue": "^3.2.37",
+    "passkey39": "file:../"
   },
   "devDependencies": {
     "@types/bun": "^1.2.17",

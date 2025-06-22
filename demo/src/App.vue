@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import { Passkey39, isWebAuthnSupported } from "../../src/index";
+import { Passkey39, isWebAuthnSupported } from "passkey39";
 
 const mnemonic = ref("");
 const status = ref("");
